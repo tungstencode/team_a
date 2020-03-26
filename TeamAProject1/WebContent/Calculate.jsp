@@ -1,5 +1,5 @@
 
-<%@ page import="test.*"%>
+<%@ page import="classes.*"%>
 
 <%
 	int firstValue = Integer.parseInt(request.getParameter("firstValue"));
