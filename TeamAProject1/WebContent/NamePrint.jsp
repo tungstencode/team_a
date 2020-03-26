@@ -8,13 +8,28 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
-
-<title>Index</title>
+<title>Printeaza numele</title>
 </head>
 <body>
-	<a href="NamePrint.jsp">Printeaza numele</a> 
-	<br>
-	<a href="Calculator.jsp">Calculator</a>
+	<h3>Print your name</h3>
+	<form method="get">
+		<input type="text" name="name" value=""> <input type="submit"
+			value="Show">
+	</form>
+
+	<%
+		String[] name = request.getParameterValues("name");
+	if (name != null) {
+	%>
+	<h3>Your name is:</h3>
+
+	<p><%=name[0]%></p>
+
+	<a href="<%=request.getRequestURI()%>">Inapoi</a>
+	<%
+		}
+	%>
+
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
